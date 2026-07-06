@@ -33,7 +33,11 @@ export const registerUserController=async(req,res)=>{
     name:newUser.name
  },process.env.JWT_SECRET,{expiresIn:"1d"})
 
- res.cookie("token",token)
+ res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,     
+  sameSite: "none", 
+});
 
  res.status(201).json({
     message:"user registered succesfully ",
@@ -67,7 +71,11 @@ export const registerUserController=async(req,res)=>{
     name:user.name
  },process.env.JWT_SECRET,{expiresIn:"1d"})
 
- res.cookie("token",token)
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,      // MUST be true in production
+  sameSite: "none",  // MUST be "none" for cross-site
+});
 
  res.status(200).json({
     message:"user logged in  succesfully ",
