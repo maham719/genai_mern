@@ -14,7 +14,7 @@ app.use(cookieParser())
 app.use(cors({
    origin: [
       "http://localhost:5173",
-      "https://genai-mern-frontend.vercel.app/",
+      "https://genai-mern-frontend.vercel.app",
     ],
     credentials:true
 }))
