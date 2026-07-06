@@ -20,6 +20,6 @@ app.use(cors({
 }))
 app.use("/api/auth",authRouter)
 app.use("/api/interview" ,interviewRouter)
-app.listen(3005,()=>{
-    console.log("server is listening on port 3005")
-})
+// app.listen(3005,()=>{
+//     console.log("server is listening on port 3005")
+// })
